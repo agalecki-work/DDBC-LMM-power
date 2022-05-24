@@ -1,0 +1,687 @@
+1                                         The SAS System         13:17 Wednesday, November 10, 2021
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M4) 
+      Licensed to UNIVERSITY OF MICHIGAN - T&R - SFA, Site 70082420.
+NOTE: This session is executing on the X64_10PRO  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.2
+      SAS/ETS 14.2
+      SAS/OR 14.2
+      SAS/IML 14.2
+      SAS/QC 14.2
+
+NOTE: Additional host information:
+
+ X64_10PRO WIN 10.0.18362  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.32 seconds
+      cpu time            0.35 seconds
+      
+1          
+2          
+3          
+4          /**************************************************************************
+5          * Purpose:  Power calcuations for Aim 2 DIAB-Cog grant.
+6          *			
+7          *	 We calculate power for black and time interaction term under different alternative
+7        ! hypotheses.									
+8          *----------------------------------------------------------------------------
+9          * PI:		Deb Levine													*;
+10         * Programmer:	Mohammed Kabeto												*;
+11         * Date:		October 9, 2021												*;
+12         ************************************************************************
+13         */
+14         
+15         options mprint nocenter;
+16         %let seedvsn            = 23411487;
+17         %let nsim		= 8588;    /* Number of simulated subjects*/
+18         
+19         *****************************************************;
+20         
+21         %put # ====  SETUP SCRIPTS executed;
+# ====  SETUP SCRIPTS executed
+22         
+23         /*  NOTE: Typically no changes needed in this section */
+24         
+25         %put ## 1. SETUP `C:\Users\Public\HSR_setup.sas`;
+## 1. SETUP `C:\Users\Public\HSR_setup.sas`
+26         %put  *  `hsr_master_datasets_path` and _current_ project work  directory
+26       ! (`project_path`)  created;
+2 The SAS System                                                 13:17 Wednesday, November 10, 2021
+
+*  `hsr_master_datasets_path` and _current_ project work  directory (`project_path`)  created
+27         
+28         /* ---- Note the location of the file --- */
+29         filename hrsetup1  "C:\Users\Public\HSR_setup.sas";
+30         %include hrsetup1;
+75         %put;
+ 
+76         
+77         %put  ## 2. SETUP `hsr_setup2.inc`;
+## 2. SETUP `hsr_setup2.inc`
+78         filename hrsetup2 "&hsr_master_datasets_path\hsr_setup2.inc";
+79         %include hrsetup2;
+# `hsr_setup2.inc` included
+## Auxiliary macros loaded
+===> _include-macros.inc assets STARTS ----
+... - in folder S:\Intmed_Rsrch2\GenMed\Restricted\MASTER 
+DATASETS\HSR_assets\HSR_setup2_info\inc\general
+... .\cdir_names_up.sas
+... .\cdir_paths_up.sas
+... .\checkdupkey.sas
+... .\computer_name.sas
+... .\driver.sas
+... .\HSR_folders_map.sas
+===> _include-macros.inc STARTS ----
+... - in folder S:\Intmed_Rsrch2\GenMed\Restricted\MASTER 
+DATASETS\HSR_assets\HSR_setup2_info\inc\session
+... .\our_session_cmplib.sas
+... .\our_session_folder_map.sas
+... .\session_info.sas
+## Global macro variables created
+MPRINT(OUR_SAS_PROGNAME):   ;
+MPRINT(OUR_SAS_PROGNAME):  ;
+MPRINT(OUR_SAS_PROGNAME):  ;
+sas_progname2 := 20-Aim2_powerCalcs.sas
+len := 22
+ext := .sas
+==== Macro our_sas_progname executed ======
+sas_batchmode           := Y
+sas_fullname            := 
+C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj\20-Aim2_powerCalcs.sas
+sas_progname            := 20-Aim2_powerCalcs
+==== Macro our_sas_progname ended ======
+* ... Global macro vars: `cdir1up_path`, `cdir2up_path` created
+
+MPRINT(PATH_2ONELEVEL_UP):   data _null_;
+MPRINT(PATH_2ONELEVEL_UP):   length pathx $ 500;
+MPRINT(PATH_2ONELEVEL_UP):   pathx = "C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj";
+MPRINT(PATH_2ONELEVEL_UP):   call scan(pathx, -1, pos, length, '\');
+MPRINT(PATH_2ONELEVEL_UP):   res = substr(pathx, 1, pos-2);
+MPRINT(PATH_2ONELEVEL_UP):   call symput ('x', res);
+MPRINT(PATH_2ONELEVEL_UP):   run;
+
+NOTE: DATA statement used (Total process time):
+3 The SAS System                                                 13:17 Wednesday, November 10, 2021
+
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CDIR_PATHS_UP):  ;
+MPRINT(PATH_2ONELEVEL_UP):   data _null_;
+MPRINT(PATH_2ONELEVEL_UP):   length pathx $ 500;
+MPRINT(PATH_2ONELEVEL_UP):   pathx = "C:\Users\agalecki\Documents\GitHub";
+MPRINT(PATH_2ONELEVEL_UP):   call scan(pathx, -1, pos, length, '\');
+MPRINT(PATH_2ONELEVEL_UP):   res = substr(pathx, 1, pos-2);
+MPRINT(PATH_2ONELEVEL_UP):   call symput ('x', res);
+MPRINT(PATH_2ONELEVEL_UP):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(CDIR_PATHS_UP):  ;
+* cdir_path     := C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj
+* cdir1up_path1 := C:\Users\agalecki\Documents\GitHub
+* cdir2up_path2 := C:\Users\agalecki\Documents
+
+* ... Global macro vars: `cdir_name`, `cdir1up_name`, `cdir2up_name` created
+
+##----  Auxiliary macro variables
+* cdir_name       := DIAB-COG-pwr-calcs-prj
+* cdir1up_name    := GitHub
+* cdir2up_name    := Documents
+
+## Dataset `work.HSR_folders_map` created
+
+NOTE: The data set WORK.HSR_FOLDERS_MAP has 7 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(HSR_FOLDERS_MAP):   data _null_;
+MPRINT(HSR_FOLDERS_MAP):   set HSR_folders_map;
+MPRINT(HSR_FOLDERS_MAP):   call execute(_code_);
+MPRINT(HSR_FOLDERS_MAP):   run;
+
+MPRINT(HSR_FOLDERS_MAP):   ;
+MPRINT(HSR_FOLDERS_MAP):   ;
+MPRINT(HSR_FOLDERS_MAP):   ;
+MPRINT(HSR_FOLDERS_MAP):   ;
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+NOTE: There were 7 observations read from the data set WORK.HSR_FOLDERS_MAP.
+
+4 The SAS System                                                 13:17 Wednesday, November 10, 2021
+
+NOTE: CALL EXECUTE generated line.
+1         + ;
+2         + ;
+3         + ;
+4         + ;
+## ==== `hsr_setup2.inc` executed ====
+## Selected auxiliary macros variables displayed
+... _Setup2_info_path := S:\Intmed_Rsrch2\GenMed\Restricted\MASTER 
+DATASETS\HSR_assets\HSR_setup2_info
+... HSR_CMPLIB_PATH   := S:\Intmed_Rsrch2\GenMed\Restricted\MASTER 
+DATASETS\HSR_ASSETS\MASTER_CMPLIB
+... sas_progname      := 20-Aim2_powerCalcs
+... cdir_path         := C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj
+... cdir1up_path      := C:\Users\agalecki\Documents\GitHub
+... cdir2up_path      := C:\Users\agalecki\Documents
+... cdir_name         := DIAB-COG-pwr-calcs-prj
+... cdir1up_name      := GitHub
+... cdir2up_name      := Documents
+==== `hsr_setup2.inc` execution ended ====
+... `hsr_setup2.inc` ENDED
+ 
+738        %put;
+ 
+739        
+740        %put  ## 3. SETUP _cdir_setup_info.inc;
+## 3. SETUP _cdir_setup_info.inc
+741        filename hrsetup3 "&cdir_path\_cdir_setup_info.inc";
+742        %include hrsetup3;   /* Created objects, e.g. macro variables can be reviewed in
+742      ! `sashtml.htm` file */
+project_path :=C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj
+project_name :=DIAB-COG-pwr-calcs-prj
+Today is 2021-11-10
+759        %put;
+ 
+760        
+761        /*--- Program setup ENDS here ===*/
+762        
+763        /* ============== Our program starts here ==========*/
+764        
+765        /*
+766        Planned enrollment
+767        ACCORD (n=2,558): Female (n=1192) (46.6% ) white (n=2,074) black(18.9% ) HbA1c 8.3 (1.1)
+768        DPPOS (n=1,716): Female (n=1,162) (67.7% ) white (n=1,245) black(27.4% ) HbA1c 6.5 (1.3)
+769        GRADE (n=4,314): Female (n=1,570) (46.4% ) white (n=3,314) black(23.2% ) HbA1c 7.5 (0.5)
+770        */
+771        
+772        /* Generate Artificial data set */
+773        /* ACCORD, DPPOS and GRADE. Distribution of characteristics were obtained from three
+773      ! papers */
+774        
+775        data simudata;
+776         call streaminit(463765); /*set seed */
+777        
+5 The SAS System                                                 13:17 Wednesday, November 10, 2021
+
+778         array peduc [3] (.30 .20 .50); /*proportion of trial: ACCORD, DPPOS, GRADE */
+779         array edu_ac [3] (.29 .34 .27);
+780         array edu_dp [3] (.25 .49 .26);
+781         array edu_gr [3] (.28 .29 .43);
+782        
+783        
+784           do sim=1 to &nsim; *8588;
+785           /* generate random value using the distribution obtained from paper data*/
+786        	 cohort=rand('Table', of peduc[*]);  /*cohort proportion*/
+787        
+788        	 /* Cohort indicator
+789        	 1=ACCORD
+790        	 2=DPPOS
+791        	 3=GRADE
+792        	 */
+793        
+794        	/* Random age at baseline*/
+795        	 if cohort=1 then age_b=rand('normal', 62.4, 5.8); /*ACCORD*/
+796        	  else if cohort=2 then age_b=rand('normal', 51.1, 9.9); /*DPPOS*/
+797        	  else if cohort=3 then age_b=rand('normal', 56.7, 10.0); /*GRADE*/
+798        
+799                /* Random sepsis genrated based on Numbers on Table 3 of JCM paper*/
+800        	 if cohort=1 then female= rand("Bernoulli", .47);  /*ACCORD*/
+801        	  else if cohort=2 then female= rand("Bernoulli", .68); /*DPPOS*/
+802        	  else if cohort=3 then female= rand("Bernoulli", .46); /*GRADE*/
+803        
+804               /* Random race at baseline*/
+805                 if cohort=1 then black= rand("Bernoulli", .19);
+806        	  else if cohort=2 then black= rand("Bernoulli", .27);
+807        	  else if cohort=3 then black= rand("Bernoulli", .23);
+808        
+809               /* Random age at baseline*/
+810        	if cohort=1 then hba1c=rand('normal', 8.3, 1.1); /*ACCORD*/
+811        	  else if cohort=2 then hba1c=rand('normal', 6.5, 1.3); /*DPPOS*/
+812        	  else if cohort=3 then hba1c=rand('normal', 7.5, 0.5); /*GRADE*/
+813        	
+814               /* Random race at baseline*/
+815                if cohort=1 then education= rand('Table', of edu_ac[*]);
+816        	  else if cohort=2 then education= rand('Table', of edu_dp[*]);
+817        	  else if cohort=3 then education= rand('Table', of edu_gr[*]);
+818        
+819               /* Random SBP at baseline*/
+820        	if cohort=1 then sbp=rand('normal', 135.2, 18.1); /*ACCORD*/
+821        	  else if cohort=2 then sbp=rand('normal', 123.4, 14.7); /*DPPOS*/
+822        	  else if cohort=3 then sbp=rand('normal', 128.3, 14.7); /*GRADE*/
+823        
+824               /* Random DBP at baseline*/
+825        	 if cohort=1 then dbp=rand('normal', 75.0, 10.3); /*ACCORD*/
+826        	  else if cohort=2 then dbp=rand('normal', 78.1, 9.4); /*DPPOS*/
+827        	  else if cohort=3 then dbp=rand('normal', 77.3, 9.9); /*GRADE*/
+828        
+829        	/* Random DSST (outcome) at baseline*/
+830        	 if cohort=1 then dsst=rand('normal', 52.5, 15.8); /*ACCORD*/
+6 The SAS System                                                 13:17 Wednesday, November 10, 2021
+
+831        	  else if cohort=2 then dsst=rand('normal', 49.2, 12.5); /*DPPOS*/
+832        	  else if cohort=3 then dsst=rand('normal', 46.5, 13.9); /*GRADE*/
+833        
+834        	/* years since baseline data (information from the six cohorts)*/
+835        	 time_ri1=rand('normal', 7.01, 0.0014);
+836        	 time_rs=rand('normal', 0.33, 0.000014);
+837        
+838           do time=1 to 4; /*Genrate Repeated observation*/
+839            resid_in1=rand('normal', 4.6, 0.00017);
+840        	if cohort=1 & time=1 then montht=0;
+841        	 else if cohort=1 & time=2 then montht=20;
+842        	 else if cohort=1 & time=3 then montht=40;
+843        	 else if cohort=2 & time=1 then montht=0;
+844        	 else if cohort=2 & time=2 then montht=24;
+845        	 else if cohort=2 & time=3 then montht=84;
+846        	 else if cohort=2 & time=4 then montht=120;
+847        	 else if cohort=3 & time=1 then montht=0;
+848        	 else if cohort=3 & time=2 then montht=48;
+849        	 else if cohort=3 & time=3 then montht=72;
+850        
+851        	 gcpd=rand('normal', 51.1, 8.4);
+852              output;
+853           end; /* end time */
+854          end; /* end sim */
+855        run;
+
+NOTE: The data set WORK.SIMUDATA has 34352 observations and 28 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.07 seconds
+      
+
+856        
+857        
+858        data work.DiabCogPowerCal_Aim2;
+859         set work.simudata;
+860         /* outliers for dsst modified */
+861         if dsst<0 then dsst = 1;
+862          else if dsst>90 then dsst=90;
+863        
+864         if (cohort=1 & time in (1,2,3)) or
+865            (cohort=2 & time in (1,2,3,4)) or
+866            (cohort=3 & time in (1,2,3)) then output;
+867        run;
+
+NOTE: There were 34352 observations read from the data set WORK.SIMUDATA.
+NOTE: The data set WORK.DIABCOGPOWERCAL_AIM2 has 27517 observations and 28 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.06 seconds
+      
+
+868        
+7 The SAS System                                                 13:17 Wednesday, November 10, 2021
+
+869        data work.DiabCogPowerCal_Aim2a;
+870         set work.DiabCogPowerCal_Aim2;
+871        
+872         subject=sim;
+873         educa2=(education=2);
+874         educa3=(education=3);
+875         educa4=(education=4);
+876        
+877         ddpos=(cohort=2);
+878         grade=(cohort=3);
+879        
+880         yearsb=(montht/30.4);
+881         blkyrsb=black*yearsb;
+882         hba1cyrsb=hba1c*yearsb;
+883         blkhbalc=black*hba1c;
+884        
+885         /* This (predicted value of) gcp variable was generated using the parameter estimate
+885      ! obtained by fitting mixed-effect model to data from the six cohorts */
+886         gcp_m= 61.32 + .1146868*yearsb -6.024794*black -.103304*hba1c -.0916031*blkyrsb +
+886      ! .2050271*blkhbalc -
+887                .0423697*hba1cyrsb +1.137986 -10.96*educa2 -4.6266*educa3 -2.26277*educa4 +
+887      ! 0.001*sbp - 0.004*dbp + -4.24*ddpos - 6.58*grade;
+888        
+889         /* predicted gcp under null */
+890         gcp_m0= gcp_m - -.0916031*blkyrsb;
+891        
+892         /* predicted gcp under different alternative hypotheses */
+893         gcp_m1= gcp_m0 - .05*blkyrsb;
+894         gcp_m2= gcp_m0 - .10*blkyrsb;
+895         gcp_m3= gcp_m0 - .15*blkyrsb;
+896         gcp_m4= gcp_m0 - .20*blkyrsb;
+897        
+898        run;
+
+NOTE: There were 27517 observations read from the data set WORK.DIABCOGPOWERCAL_AIM2.
+NOTE: The data set WORK.DIABCOGPOWERCAL_AIM2A has 27517 observations and 44 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.07 seconds
+      
+
+899        
+900        
+901        %macro powercal(dvar, rinter, rvacov, rslope,  resid);
+902         ods exclude all;
+903         proc hpmixed data=work.DiabCogPowerCal_Aim2a noclprint;
+904           class subject;
+905           model &dvar = yearsb black hba1c blkyrsb blkhbalc hba1cyrsb educa2 educa3 educa4 sbp
+905      ! dbp ddpos grade / solution ;
+906           random intercept yearsb /subject=subject type=un;
+907           parms (&rinter) (&rvacov) (&rslope)  (&resid) /noiter hold=1 2 3 4;
+908           test blkyrsb;
+909           ods output tests3=Aim1_t3;
+8 The SAS System                                                 13:17 Wednesday, November 10, 2021
+
+910        run;
+911        quit;
+912        ods output close;
+913        run;
+914        
+915        ods exclude none;
+916        
+917        /**Power calculation: gcp***/
+918        data f_powercal;
+919         set Aim1_t3;
+920         alpha = 0.05;
+921         n  = &nsim; * 8588; ** number of sub;
+922         ni = 3;   *** average number of obs per sub;
+923         p  =13;   ** number of fixed effects;
+924         dendf0=n*ni-n;
+925         qf=finv(1-alpha, numdf, dendf0);
+926         dendfA=n*ni-p;
+927         power=1- (probf(qf, numdf, dendfA, Fvalue*numdf));
+928        run;
+929        
+930        proc print data=f_powercal;
+931        run;
+932        %mend powercal;
+933        
+934        /*--- HTML report created ---*/
+935        ods html file = "&sas_progname..html" (title = "&sas_progname")
+936                 path = "&cdir_path\reports";
+NOTE: Writing HTML Body file: 20-Aim2_powerCalcs.html
+937        %our_session_basic;
+MPRINT(OUR_SESSION_BASIC):   proc odstext;
+MPRINT(OUR_SESSION_BASIC):   p "20-Aim2_powerCalcs.sas executed" / style=[color=red fontsize=15pt];
+MPRINT(OUR_SESSION_BASIC):   p "";
+MPRINT(OUR_SESSION_BASIC):   p "Executed on: 10NOV21";
+MPRINT(OUR_SESSION_BASIC):   p '';
+MPRINT(OUR_SESSION_BASIC):   p "--- SAS session";
+MPRINT(OUR_SESSION_BASIC):   p "Userid:                 agalecki";
+MPRINT(OUR_SESSION_BASIC):   p "SAS Version:            9.04.01M4P11092016";
+MPRINT(OUR_SESSION_BASIC):   p "OS:                     X64_10PRO";
+MPRINT(OUR_SESSION_BASIC):   p '';
+MPRINT(OUR_SESSION_BASIC):   p "--- Current directory ---------------- ";
+MPRINT(OUR_SESSION_BASIC):   p "cdir_name:             DIAB-COG-pwr-calcs-prj";
+MPRINT(OUR_SESSION_BASIC):   p "project_name:          DIAB-COG-pwr-calcs-prj";
+MPRINT(OUR_SESSION_BASIC):   p "cdir_path:             
+C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj";
+NOTE: PROCEDURE ODSTEXT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+NOTE: The PROCEDURE ODSTEXT printed page 1.
+
+MPRINT(OUR_SESSION_BASIC):   run;
+MPRINT(OUR_SESSION_BASIC):   quit;
+938        
+9 The SAS System                                                 13:17 Wednesday, November 10, 2021
+
+939        
+940        title "Outcome gcp_m1 with effect of -0.05 on the interaction between race and time";
+941        %powercal(gcp_m1, 23.04, 0, 0.0081, 11.56);
+MPRINT(POWERCAL):   ods exclude all;
+MPRINT(POWERCAL):   proc hpmixed data=work.DiabCogPowerCal_Aim2a noclprint;
+MPRINT(POWERCAL):   class subject;
+MPRINT(POWERCAL):   model gcp_m1 = yearsb black hba1c blkyrsb blkhbalc hba1cyrsb educa2 educa3 
+educa4 sbp dbp ddpos grade / solution ;
+MPRINT(POWERCAL):   random intercept yearsb /subject=subject type=un;
+MPRINT(POWERCAL):   parms (23.04) (0) (0.0081) (11.56) /noiter hold=1 2 3 4;
+MPRINT(POWERCAL):   test blkyrsb;
+MPRINT(POWERCAL):   ods output tests3=Aim1_t3;
+MPRINT(POWERCAL):   run;
+NOTE: The data set WORK.AIM1_T3 has 1 observations and 5 variables.
+NOTE: PROCEDURE HPMIXED used (Total process time):
+      real time           17.41 seconds
+      cpu time            17.40 seconds
+      
+
+MPRINT(POWERCAL):   quit;
+MPRINT(POWERCAL):   ods output close;
+MPRINT(POWERCAL):   run;
+MPRINT(POWERCAL):   ods exclude none;
+MPRINT(POWERCAL):   data f_powercal;
+MPRINT(POWERCAL):   set Aim1_t3;
+MPRINT(POWERCAL):   alpha = 0.05;
+MPRINT(POWERCAL):   n = 8588;
+MPRINT(POWERCAL):   * 8588;
+MPRINT(POWERCAL):   ** number of sub;
+MPRINT(POWERCAL):   ni = 3;
+MPRINT(POWERCAL):   *** average number of obs per sub;
+MPRINT(POWERCAL):   p =13;
+MPRINT(POWERCAL):   ** number of fixed effects;
+MPRINT(POWERCAL):   dendf0=n*ni-n;
+MPRINT(POWERCAL):   qf=finv(1-alpha, numdf, dendf0);
+MPRINT(POWERCAL):   dendfA=n*ni-p;
+MPRINT(POWERCAL):   power=1- (probf(qf, numdf, dendfA, Fvalue*numdf));
+MPRINT(POWERCAL):   run;
+
+NOTE: There were 1 observations read from the data set WORK.AIM1_T3.
+NOTE: The data set WORK.F_POWERCAL has 1 observations and 13 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(POWERCAL):   proc print data=f_powercal;
+MPRINT(POWERCAL):   run;
+
+NOTE: There were 1 observations read from the data set WORK.F_POWERCAL.
+NOTE: The PROCEDURE PRINT printed page 2.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.02 seconds
+10 The SAS System                                                13:17 Wednesday, November 10, 2021
+
+      cpu time            0.03 seconds
+      
+
+942        
+943        title "Outcome gcp_m2 with effect of -0.1 on the interaction between race and time";
+944        %powercal(gcp_m2, 23.04, 0, 0.0081, 11.56);
+MPRINT(POWERCAL):   ods exclude all;
+MPRINT(POWERCAL):   proc hpmixed data=work.DiabCogPowerCal_Aim2a noclprint;
+MPRINT(POWERCAL):   class subject;
+MPRINT(POWERCAL):   model gcp_m2 = yearsb black hba1c blkyrsb blkhbalc hba1cyrsb educa2 educa3 
+educa4 sbp dbp ddpos grade / solution ;
+MPRINT(POWERCAL):   random intercept yearsb /subject=subject type=un;
+MPRINT(POWERCAL):   parms (23.04) (0) (0.0081) (11.56) /noiter hold=1 2 3 4;
+MPRINT(POWERCAL):   test blkyrsb;
+MPRINT(POWERCAL):   ods output tests3=Aim1_t3;
+MPRINT(POWERCAL):   run;
+NOTE: The data set WORK.AIM1_T3 has 1 observations and 5 variables.
+NOTE: PROCEDURE HPMIXED used (Total process time):
+      real time           17.95 seconds
+      cpu time            17.93 seconds
+      
+
+MPRINT(POWERCAL):   quit;
+MPRINT(POWERCAL):   ods output close;
+MPRINT(POWERCAL):   run;
+MPRINT(POWERCAL):   ods exclude none;
+MPRINT(POWERCAL):   data f_powercal;
+MPRINT(POWERCAL):   set Aim1_t3;
+MPRINT(POWERCAL):   alpha = 0.05;
+MPRINT(POWERCAL):   n = 8588;
+MPRINT(POWERCAL):   * 8588;
+MPRINT(POWERCAL):   ** number of sub;
+MPRINT(POWERCAL):   ni = 3;
+MPRINT(POWERCAL):   *** average number of obs per sub;
+MPRINT(POWERCAL):   p =13;
+MPRINT(POWERCAL):   ** number of fixed effects;
+MPRINT(POWERCAL):   dendf0=n*ni-n;
+MPRINT(POWERCAL):   qf=finv(1-alpha, numdf, dendf0);
+MPRINT(POWERCAL):   dendfA=n*ni-p;
+MPRINT(POWERCAL):   power=1- (probf(qf, numdf, dendfA, Fvalue*numdf));
+MPRINT(POWERCAL):   run;
+
+NOTE: There were 1 observations read from the data set WORK.AIM1_T3.
+NOTE: The data set WORK.F_POWERCAL has 1 observations and 13 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(POWERCAL):   proc print data=f_powercal;
+MPRINT(POWERCAL):   run;
+
+NOTE: There were 1 observations read from the data set WORK.F_POWERCAL.
+11 The SAS System                                                13:17 Wednesday, November 10, 2021
+
+NOTE: The PROCEDURE PRINT printed page 3.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+945        
+946        title "Outcome gcp_m3 with effect of -0.15 on the interaction between race and time";
+947        %powercal(gcp_m3, 23.04, 0, 0.0081, 11.56);
+MPRINT(POWERCAL):   ods exclude all;
+MPRINT(POWERCAL):   proc hpmixed data=work.DiabCogPowerCal_Aim2a noclprint;
+MPRINT(POWERCAL):   class subject;
+MPRINT(POWERCAL):   model gcp_m3 = yearsb black hba1c blkyrsb blkhbalc hba1cyrsb educa2 educa3 
+educa4 sbp dbp ddpos grade / solution ;
+MPRINT(POWERCAL):   random intercept yearsb /subject=subject type=un;
+MPRINT(POWERCAL):   parms (23.04) (0) (0.0081) (11.56) /noiter hold=1 2 3 4;
+MPRINT(POWERCAL):   test blkyrsb;
+MPRINT(POWERCAL):   ods output tests3=Aim1_t3;
+MPRINT(POWERCAL):   run;
+NOTE: The data set WORK.AIM1_T3 has 1 observations and 5 variables.
+NOTE: PROCEDURE HPMIXED used (Total process time):
+      real time           18.76 seconds
+      cpu time            18.68 seconds
+      
+
+MPRINT(POWERCAL):   quit;
+MPRINT(POWERCAL):   ods output close;
+MPRINT(POWERCAL):   run;
+MPRINT(POWERCAL):   ods exclude none;
+MPRINT(POWERCAL):   data f_powercal;
+MPRINT(POWERCAL):   set Aim1_t3;
+MPRINT(POWERCAL):   alpha = 0.05;
+MPRINT(POWERCAL):   n = 8588;
+MPRINT(POWERCAL):   * 8588;
+MPRINT(POWERCAL):   ** number of sub;
+MPRINT(POWERCAL):   ni = 3;
+MPRINT(POWERCAL):   *** average number of obs per sub;
+MPRINT(POWERCAL):   p =13;
+MPRINT(POWERCAL):   ** number of fixed effects;
+MPRINT(POWERCAL):   dendf0=n*ni-n;
+MPRINT(POWERCAL):   qf=finv(1-alpha, numdf, dendf0);
+MPRINT(POWERCAL):   dendfA=n*ni-p;
+MPRINT(POWERCAL):   power=1- (probf(qf, numdf, dendfA, Fvalue*numdf));
+MPRINT(POWERCAL):   run;
+
+NOTE: There were 1 observations read from the data set WORK.AIM1_T3.
+NOTE: The data set WORK.F_POWERCAL has 1 observations and 13 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(POWERCAL):   proc print data=f_powercal;
+12 The SAS System                                                13:17 Wednesday, November 10, 2021
+
+MPRINT(POWERCAL):   run;
+
+NOTE: There were 1 observations read from the data set WORK.F_POWERCAL.
+NOTE: The PROCEDURE PRINT printed page 4.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+948        
+949        title "Outcome gcp_m4 with effect of -0.20 on the interaction between race and time";
+950        %powercal(gcp_m4, 23.04, 0, 0.0081, 11.56);
+MPRINT(POWERCAL):   ods exclude all;
+MPRINT(POWERCAL):   proc hpmixed data=work.DiabCogPowerCal_Aim2a noclprint;
+MPRINT(POWERCAL):   class subject;
+MPRINT(POWERCAL):   model gcp_m4 = yearsb black hba1c blkyrsb blkhbalc hba1cyrsb educa2 educa3 
+educa4 sbp dbp ddpos grade / solution ;
+MPRINT(POWERCAL):   random intercept yearsb /subject=subject type=un;
+MPRINT(POWERCAL):   parms (23.04) (0) (0.0081) (11.56) /noiter hold=1 2 3 4;
+MPRINT(POWERCAL):   test blkyrsb;
+MPRINT(POWERCAL):   ods output tests3=Aim1_t3;
+MPRINT(POWERCAL):   run;
+NOTE: The data set WORK.AIM1_T3 has 1 observations and 5 variables.
+NOTE: PROCEDURE HPMIXED used (Total process time):
+      real time           18.29 seconds
+      cpu time            18.28 seconds
+      
+
+MPRINT(POWERCAL):   quit;
+MPRINT(POWERCAL):   ods output close;
+MPRINT(POWERCAL):   run;
+MPRINT(POWERCAL):   ods exclude none;
+MPRINT(POWERCAL):   data f_powercal;
+MPRINT(POWERCAL):   set Aim1_t3;
+MPRINT(POWERCAL):   alpha = 0.05;
+MPRINT(POWERCAL):   n = 8588;
+MPRINT(POWERCAL):   * 8588;
+MPRINT(POWERCAL):   ** number of sub;
+MPRINT(POWERCAL):   ni = 3;
+MPRINT(POWERCAL):   *** average number of obs per sub;
+MPRINT(POWERCAL):   p =13;
+MPRINT(POWERCAL):   ** number of fixed effects;
+MPRINT(POWERCAL):   dendf0=n*ni-n;
+MPRINT(POWERCAL):   qf=finv(1-alpha, numdf, dendf0);
+MPRINT(POWERCAL):   dendfA=n*ni-p;
+MPRINT(POWERCAL):   power=1- (probf(qf, numdf, dendfA, Fvalue*numdf));
+MPRINT(POWERCAL):   run;
+
+NOTE: There were 1 observations read from the data set WORK.AIM1_T3.
+NOTE: The data set WORK.F_POWERCAL has 1 observations and 13 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+13 The SAS System                                                13:17 Wednesday, November 10, 2021
+
+      
+
+MPRINT(POWERCAL):   proc print data=f_powercal;
+MPRINT(POWERCAL):   run;
+
+NOTE: There were 1 observations read from the data set WORK.F_POWERCAL.
+NOTE: The PROCEDURE PRINT printed page 5.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+951        
+952        ods html close;
+953        
+954        
+955        
+956        
+957        
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           1:18.95
+      cpu time            1:13.51
+      

@@ -1,0 +1,206 @@
+The SAS System                                               12:26 Wednesday, November 10, 2021   1
+
+10-Aim1_Create_predm.sas executed
+
+
+
+Executed on: 10NOV21
+
+
+
+--- SAS session
+
+Userid:                 agalecki
+
+SAS Version:            9.04.01M4P11092016
+
+OS:                     X64_10PRO
+
+
+
+--- Current directory ----------------
+
+cdir_name:             DIAB-COG-pwr-calcs-prj
+
+project_name:          DIAB-COG-pwr-calcs-prj
+
+cdir_path:             C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj
+
+PROC CONTENTS for `work.Aim1data`                            12:26 Wednesday, November 10, 2021   2
+
+The CONTENTS Procedure
+
+Data Set Name        WORK.AIM1DATA                 Observations          107716
+Member Type          DATA                          Variables             26    
+Engine               V9                            Indexes               0     
+Created              11/10/2021 12:26:42           Observation Length    136   
+Last Modified        11/10/2021 12:26:42           Deleted Observations  0     
+Protection                                         Compressed            NO    
+Data Set Type                                      Sorted                NO    
+Label                                                                          
+Data Representation  WINDOWS_64                                                
+Encoding             wlatin1  Western (Windows)                                
+
+
+                                 Engine/Host Dependent Information
+
+Data Set Page Size          65536                                                                  
+Number of Data Set Pages    224                                                                    
+First Data Page             1                                                                      
+Max Obs per Page            481                                                                    
+Obs in First Data Page      454                                                                    
+Number of Data Set Repairs  0                                                                      
+ExtendObsCounter            YES                                                                    
+Filename                    C:\Users\agalecki\AppData\Local\Temp\SAS Temporary                     
+                            Files\_TD7036_LTGER047_\aim1data.sas7bdat                              
+Release Created             9.0401M4                                                               
+Host Created                X64_10PRO                                                              
+Owner Name                  UMHS\agalecki                                                          
+File Size                   14MB                                                                   
+File Size (bytes)           14745600                                                               
+
+
+             Alphabetic List of Variables and Attributes
+ 
+ #    Variable        Type    Len    Label
+
+ 5    black           Num       3                                    
+24    blkglual        Num       8                                    
+23    blkyrsb         Num       8                                    
+20    bmicat          Num       3                                    
+14    cardia          Num       3                                    
+15    chs             Num       3                                    
+ 4    cogtime_y2      Num       8                                    
+21    cohortd         Num       3    Cohort identifiy                
+10    educ1           Num       3                                    
+11    educ2           Num       3                                    
+12    educ3           Num       3                                    
+13    educ4           Num       3                                    
+ 3    female0         Num       3    Gender at Visit 1               
+16    fos             Num       3                                    
+ 2    gcp             Num       8    gcp factor score                
+25    gluayrsb        Num       8                                    
+ 6    htntx           Num       3    Treatment for hypertension      
+PROC CONTENTS for `work.Aim1data`                            12:26 Wednesday, November 10, 2021   3
+
+The CONTENTS Procedure
+
+             Alphabetic List of Variables and Attributes
+ 
+ #    Variable        Type    Len    Label
+
+ 7    hxafib          Num       3    History of atrial fibrillation  
+19    mean_glu_all    Num       8                                    
+18    mesa            Num       3                                    
+ 1    newid           Char     18    BPCog Identifier                
+17    nomas           Num       3                                    
+ 8    physact         Num       3    Any Physical Activities         
+22    pred_2wy        Num       8    Linear prediction, fixed portion
+26    pred_v          Num       8    Linear Predictor (no BLUPs)     
+ 9    smoke           Num       3    Smoke                           
+Model fit. Predicted values saved in `dataout.aim1predv` dataset                                  4
+                                                                 12:26 Wednesday, November 10, 2021
+
+The HPMIXED Procedure
+
+                        Model Information
+
+Data Set                     WORK.AIM1DATA                       
+Response Variable            gcp                                 
+Estimation Method            Restricted Maximum Likelihood (REML)
+Degrees of Freedom Method    Residual                            
+
+
+Number of Observations Read      107716
+Number of Observations Used      107551
+
+
+              Dimensions
+
+G-side Cov. Parameters               3
+R-side Cov. Parameters               1
+Columns in X                        25
+Columns in Z per Subject             2
+Subjects (Blocks in V)           28846
+
+
+           Optimization Information
+
+Optimization Technique        Dual Quasi-Newton
+Parameters in Optimization    3                
+Lower Boundaries              2                
+Upper Boundaries              0                
+Residual Variance             Profiled         
+
+
+                          Iteration History
+ 
+                               Objective                         Max
+Iteration    Evaluations        Function          Change    Gradient
+
+        0              4    689566.51755       .            27880.92
+        1              3    689425.28819    141.22936116    13410.41
+        2              6    689422.31444      2.97374722    14803.03
+        3              4    689405.21223     17.10221116     14096.7
+        4              4    689362.60341     42.60881925    446.0321
+        5              2    689362.55571      0.04769737    32.13503
+        6              3    689362.55549      0.00021928    0.149813
+
+                          Convergence criterion (GCONV=1E-8) satisfied.                           
+
+
+Model fit. Predicted values saved in `dataout.aim1predv` dataset                                  5
+                                                                 12:26 Wednesday, November 10, 2021
+
+The HPMIXED Procedure
+
+         Covariance Parameter Estimates
+ 
+Cov Parm    Subject                     Estimate
+
+UN(1,1)     newid                        27.3762
+UN(2,1)     newid                        -0.3132
+UN(2,2)     newid                        0.09389
+Residual                                 21.0530
+
+
+            Fit Statistics
+
+-2 Res Log Likelihood            689363
+AIC  (Smaller is Better)         689371
+AICC (Smaller is Better)         689371
+BIC  (Smaller is Better)         689404
+CAIC (Smaller is Better)         689408
+HQIC (Smaller is Better)         689381
+
+
+                                Solution for Fixed Effects
+ 
+                Cohort                             Standard
+Effect          identifiy    bmicat    Estimate       Error       DF    t Value    Pr > |t|
+
+Intercept                                     0           .        .        .         .    
+cogtime_y2                              -0.1376     0.01507    108E3      -9.13      <.0001
+black                                   -4.8984      0.2460    108E3     -19.92      <.0001
+mean_glu_all                           -0.00400    0.001502    108E3      -2.66      0.0077
+blkyrsb                                -0.01999    0.009422    108E3      -2.12      0.0339
+blkglual                               -0.00485    0.002124    108E3      -2.28      0.0224
+gluayrsb                               -0.00096    0.000142    108E3      -6.74      <.0001
+cohortd         1                       -0.3276      0.1315    108E3      -2.49      0.0127
+cohortd         2                             0           .        .        .         .    
+cohortd         3                       -3.3088      0.1467    108E3     -22.56      <.0001
+cohortd         4                        0.8727      0.1534    108E3       5.69      <.0001
+cohortd         5                        0.1705      0.1637    108E3       1.04      0.2977
+cohortd         6                       -1.4482      0.2178    108E3      -6.65      <.0001
+female0                                  2.1152     0.07199    108E3      29.38      <.0001
+educ1                                  -10.9848      0.1550    108E3     -70.89      <.0001
+educ2                                   -7.6906      0.1308    108E3     -58.80      <.0001
+educ3                                   -3.8476     0.09012    108E3     -42.69      <.0001
+educ4                                   -2.5486      0.1038    108E3     -24.56      <.0001
+bmicat                       0          56.4855      0.2230    108E3     253.28      <.0001
+bmicat                       1          56.4074      0.2241    108E3     251.69      <.0001
+bmicat                       2          56.6125      0.2316    108E3     244.46      <.0001
+smoke                                   -0.5102     0.09562    108E3      -5.34      <.0001
+physact                                  0.7936     0.09905    108E3       8.01      <.0001
+hxafib                                  -2.2246      0.2856    108E3      -7.79      <.0001
+htntx                                   -0.9821     0.08249    108E3     -11.91      <.0001

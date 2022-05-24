@@ -1,0 +1,56 @@
+The SAS System                                               13:04 Wednesday, November 10, 2021   1
+
+12-Aim1_powerCalcs.sas executed
+
+
+
+Executed on: 10NOV21
+
+
+
+--- SAS session
+
+Userid:                 agalecki
+
+SAS Version:            9.04.01M4P11092016
+
+OS:                     X64_10PRO
+
+
+
+--- Current directory ----------------
+
+cdir_name:             DIAB-COG-pwr-calcs-prj
+
+project_name:          DIAB-COG-pwr-calcs-prj
+
+cdir_path:             C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj
+
+Output gcp_m1 with effect of 0.015 on the interaction between ethnicity and time******            2
+                                                                 13:04 Wednesday, November 10, 2021
+
+               Num
+Obs  Effect     DF  DenDF   FValue   ProbF  alpha    n    ni   p  dendf0     qf    dendfA   power
+
+ 1   blkyrsb     1  108E3     2.50  0.1137   0.05  28000   4  22   84000  3.84157  111978  0.35285
+Output gcp_m2 with effect of 0.025 on the interaction between ethnicity and time******            3
+                                                                 13:04 Wednesday, November 10, 2021
+
+               Num
+Obs  Effect     DF  DenDF   FValue   ProbF  alpha    n    ni   p  dendf0     qf    dendfA   power
+
+ 1   blkyrsb     1  108E3     6.95  0.0084   0.05  28000   4  22   84000  3.84157  111978  0.75060
+Output gcp_m3 with effect of 0.035 on the interaction between ethnicity and time******            4
+                                                                 13:04 Wednesday, November 10, 2021
+
+               Num
+Obs  Effect     DF  DenDF   FValue   ProbF  alpha    n    ni   p  dendf0     qf    dendfA   power
+
+ 1   blkyrsb     1  108E3    13.62  0.0002   0.05  28000   4  22   84000  3.84157  111978  0.95827
+Output gcp_m4 with effect of 0.045 on the interaction between ethnicity and time******            5
+                                                                 13:04 Wednesday, November 10, 2021
+
+               Num
+Obs  Effect     DF  DenDF   FValue   ProbF  alpha    n    ni   p  dendf0     qf    dendfA   power
+
+ 1   blkyrsb     1  108E3    22.52  <.0001   0.05  28000   4  22   84000  3.84157  111978  0.99733

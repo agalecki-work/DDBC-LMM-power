@@ -1,0 +1,2720 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>SAS Output</title>
+<style type="text/css">
+<!--
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.heading1
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading3
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading4
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading5
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading6
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="l systemtitle">The SAS System</td>
+</tr>
+</table><br>
+<div>
+<div class="l paragraph" style=" color: #FF0000; font-size: 15pt;">01show_prj_assets.sas executed</div>
+<div class="l paragraph">&nbsp;</div>
+<div class="l paragraph">Executed on: 10NOV21</div>
+<div class="l paragraph">&nbsp;</div>
+<div class="l paragraph">--- SAS session</div>
+<div class="l paragraph">Userid:                 agalecki</div>
+<div class="l paragraph">SAS Version:            9.04.01M4P11092016</div>
+<div class="l paragraph">OS:                     X64_10PRO</div>
+<div class="l paragraph">&nbsp;</div>
+<div class="l paragraph">--- Current directory ---------------- </div>
+<div class="l paragraph">cdir_name:             DIAB-COG-pwr-calcs-prj</div>
+<div class="l paragraph">project_name:          DIAB-COG-pwr-calcs-prj</div>
+<div class="l paragraph">cdir_path:             C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX1"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="l systemtitle">Folders map</td>
+</tr>
+<tr>
+<td class="l systemtitle2">Paths to folders are stored in macro variables</td>
+</tr>
+<tr>
+<td class="l systemtitle3">Paths are relative to S:\Intmed_Rsrch2\GenMed\Restricted\MASTER DATASETS</td>
+</tr>
+</table><br>
+<div>
+<div align="left">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Print: Data Set WORK.HSR_FOLDERS_MAP">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r header" scope="col">Obs</th>
+<th class="l header" scope="col">folder_nickname</th>
+<th class="l header" scope="col">glb_varname</th>
+<th class="l header" scope="col">fxd_path</th>
+<th class="l header" scope="col">rel_path</th>
+<th class="l header" scope="col">folder_description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="l data">hsr_master_datasets</td>
+<td class="l data">hsr_master_datasets_path</td>
+<td class="l data">Y</td>
+<td class="l data">.</td>
+<td class="l data">HSR master folder</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="l data">cdir</td>
+<td class="l data">cdir_path</td>
+<td class="l data">N</td>
+<td class="l data">C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj</td>
+<td class="l data">Current directory/folder</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="l data">cdir1up</td>
+<td class="l data">cdir1up_path</td>
+<td class="l data">N</td>
+<td class="l data">C:\Users\agalecki\Documents\GitHub</td>
+<td class="l data">One level up relative to current folder</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="l data">cdir2up</td>
+<td class="l data">cdir2up_path</td>
+<td class="l data">N</td>
+<td class="l data">C:\Users\agalecki\Documents</td>
+<td class="l data">Two levels up relative to current folder</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="l data">HSR_CMPLIB</td>
+<td class="l data">HSR_CMPLIB_path</td>
+<td class="l data">Y</td>
+<td class="l data">.\HSR_ASSETS\MASTER_CMPLIB</td>
+<td class="l data">HSR compiled library</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="l data">data_projects</td>
+<td class="l data">data_projects_path</td>
+<td class="l data">Y</td>
+<td class="l data">.\Data_Projects</td>
+<td class="l data">Data projects</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="l data">original_data</td>
+<td class="l data">original_data_path</td>
+<td class="l data">Y</td>
+<td class="l data">.\Data</td>
+<td class="l data">Original data</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX2"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="l systemtitle">SAS Libraries (subset of `_vlibnam` dataset)</td>
+</tr>
+</table><br>
+<div>
+<div align="left">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Print: Data Set WORK._VLIBNAM">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r header" scope="col">Obs</th>
+<th class="l header" scope="col">libname</th>
+<th class="l header" scope="col">path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">S:\Intmed_Rsrch2\GenMed\Restricted\MASTER DATASETS\HSR_ASSETS\MASTER_CMPLIB\cmplib\2020-05-14_Messineo</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="l data">WORK</td>
+<td class="l data">C:\Users\agalecki\AppData\Local\Temp\SAS Temporary Files\_TD13800_LTGER047_</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX3"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="l systemtitle">SAS External files (subset of `_vextfl` dataset)</td>
+</tr>
+</table><br>
+<div>
+<div align="left">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Print: Data Set WORK._VEXTFL">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r header" scope="col">Obs</th>
+<th class="l header" scope="col">fileref</th>
+<th class="l header" scope="col">xpath</th>
+<th class="l header" scope="col">xengine</th>
+<th class="r header" scope="col">modate</th>
+<th class="r header" scope="col">filesize</th>
+<th class="r header" scope="col">level</th>
+<th class="l header" scope="col">directory</th>
+<th class="l header" scope="col">exists</th>
+<th class="l header" scope="col">temporary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="l data">#LN00003</td>
+<td class="l data">C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj\01show_prj_assets.log</td>
+<td class="l data">DISK</td>
+<td class="r data">10NOV21:12:26:11</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="l data">no</td>
+<td class="l data">yes</td>
+<td class="l data">yes</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="l data">#LN00004</td>
+<td class="l data">C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj\01show_prj_assets.lst</td>
+<td class="l data">DISK</td>
+<td class="r data">01JAN60:00:00:00</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="l data">no</td>
+<td class="l data">no</td>
+<td class="l data">yes</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="l data">#LN00005</td>
+<td class="l data">C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj\01show_prj_assets.sas</td>
+<td class="l data">DISK</td>
+<td class="r data">10NOV21:11:53:52</td>
+<td class="r data">2060</td>
+<td class="r data">0</td>
+<td class="l data">no</td>
+<td class="l data">yes</td>
+<td class="l data">yes</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="l data">HRSETUP1</td>
+<td class="l data">C:\Users\Public\HSR_setup.sas</td>
+<td class="l data">DISK</td>
+<td class="r data">30MAR21:11:05:40</td>
+<td class="r data">1745</td>
+<td class="r data">0</td>
+<td class="l data">no</td>
+<td class="l data">yes</td>
+<td class="l data">no</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="l data">HRSETUP2</td>
+<td class="l data">S:\Intmed_Rsrch2\GenMed\Restricted\MASTER DATASETS\hsr_setup2.inc</td>
+<td class="l data">DISK</td>
+<td class="r data">05JUL20:14:26:35</td>
+<td class="r data">1701</td>
+<td class="r data">0</td>
+<td class="l data">no</td>
+<td class="l data">yes</td>
+<td class="l data">no</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="l data">INC_MAC1</td>
+<td class="l data">S:\Intmed_Rsrch2\GenMed\Restricted\MASTER DATASETS\HSR_assets\HSR_setup2_info\inc\general\_include-macros.inc</td>
+<td class="l data">DISK</td>
+<td class="r data">05JUL20:13:18:15</td>
+<td class="r data">1347</td>
+<td class="r data">0</td>
+<td class="l data">no</td>
+<td class="l data">yes</td>
+<td class="l data">no</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="l data">INC_MAC2</td>
+<td class="l data">S:\Intmed_Rsrch2\GenMed\Restricted\MASTER DATASETS\HSR_assets\HSR_setup2_info\inc\session\_include-macros.inc</td>
+<td class="l data">DISK</td>
+<td class="r data">05JUL20:12:46:26</td>
+<td class="r data">588</td>
+<td class="r data">0</td>
+<td class="l data">no</td>
+<td class="l data">yes</td>
+<td class="l data">no</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<td class="l data">FFM</td>
+<td class="l data">S:\Intmed_Rsrch2\GenMed\Restricted\MASTER DATASETS\HSR_assets\HSR_setup2_info\inc\session\session_info.sas</td>
+<td class="l data">DISK</td>
+<td class="r data">09JUL20:09:46:02</td>
+<td class="r data">3223</td>
+<td class="r data">0</td>
+<td class="l data">no</td>
+<td class="l data">yes</td>
+<td class="l data">no</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9</th>
+<td class="l data">FLDR_MAP</td>
+<td class="l data">S:\Intmed_Rsrch2\GenMed\Restricted\MASTER DATASETS\HSR_assets\HSR_setup2_info\HSR_folders_map.inc</td>
+<td class="l data">DISK</td>
+<td class="r data">11JUL20:14:29:10</td>
+<td class="r data">1993</td>
+<td class="r data">0</td>
+<td class="l data">no</td>
+<td class="l data">yes</td>
+<td class="l data">no</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10</th>
+<td class="l data">HRSETUP3</td>
+<td class="l data">C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj\_cdir_setup_info.inc</td>
+<td class="l data">DISK</td>
+<td class="r data">10NOV21:11:53:52</td>
+<td class="r data">447</td>
+<td class="r data">0</td>
+<td class="l data">no</td>
+<td class="l data">yes</td>
+<td class="l data">no</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11</th>
+<td class="l data">#LN00008</td>
+<td class="l data">C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj\reports\01show_prj_assets.html</td>
+<td class="l data">DISK</td>
+<td class="r data">10NOV21:12:26:17</td>
+<td class="r data">39980</td>
+<td class="r data">0</td>
+<td class="l data">no</td>
+<td class="l data">yes</td>
+<td class="l data">yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX4"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="l systemtitle">Datasets in `work` library (subset of `_vtable` dataset)</td>
+</tr>
+</table><br>
+<div>
+<div align="left">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Print: Data Set WORK._VTABLE">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r header" scope="col">Obs</th>
+<th class="l header" scope="col">libname</th>
+<th class="l header" scope="col">memname</th>
+<th class="l header" scope="col">memlabel</th>
+<th class="l header" scope="col">typemem</th>
+<th class="r header" scope="col">crdate</th>
+<th class="r header" scope="col">nobs</th>
+<th class="r header" scope="col">nvar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="l data">WORK</td>
+<td class="l data">HSR_FOLDERS_MAP</td>
+<td class="l data">&nbsp;</td>
+<td class="l data">DATA</td>
+<td class="r data">10NOV21:12:26:17</td>
+<td class="r data">7</td>
+<td class="r data">11</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="l data">WORK</td>
+<td class="l data">_VCATALG</td>
+<td class="l data">&nbsp;</td>
+<td class="l data">DATA</td>
+<td class="r data">10NOV21:12:26:19</td>
+<td class="r data">38</td>
+<td class="r data">5</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="l data">WORK</td>
+<td class="l data">_VCOLUMN</td>
+<td class="l data">List of variables</td>
+<td class="l data">DATA</td>
+<td class="r data">10NOV21:12:26:18</td>
+<td class="r data">53</td>
+<td class="r data">11</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="l data">WORK</td>
+<td class="l data">_VEXTFL</td>
+<td class="l data">List of SAS filerefs</td>
+<td class="l data">DATA</td>
+<td class="r data">10NOV21:12:26:18</td>
+<td class="r data">11</td>
+<td class="r data">9</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="l data">WORK</td>
+<td class="l data">_VLIBNAM</td>
+<td class="l data">List of SAS libraries</td>
+<td class="l data">DATA</td>
+<td class="r data">10NOV21:12:26:18</td>
+<td class="r data">2</td>
+<td class="r data">2</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<td class="l data">WORK</td>
+<td class="l data">_VMACRO</td>
+<td class="l data">macro variables and their values</td>
+<td class="l data">DATA</td>
+<td class="r data">10NOV21:12:26:19</td>
+<td class="r data">19</td>
+<td class="r data">4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX5"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="l systemtitle">Macro variable names and their values (subset of `_vmacro` dataset)</td>
+</tr>
+</table><br>
+<div>
+<div align="left">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Print: Data Set WORK._VMACRO">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r header" scope="col">Obs</th>
+<th class="l header" scope="col">scope</th>
+<th class="l header" scope="col">name</th>
+<th class="r header" scope="col">offset</th>
+<th class="l header" scope="col">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">CDIR1UP_NAME</td>
+<td class="r data">0</td>
+<td class="l data">GitHub</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">CDIR1UP_PATH</td>
+<td class="r data">0</td>
+<td class="l data">C:\Users\agalecki\Documents\GitHub</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">CDIR2UP_NAME</td>
+<td class="r data">0</td>
+<td class="l data">Documents</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">CDIR2UP_PATH</td>
+<td class="r data">0</td>
+<td class="l data">C:\Users\agalecki\Documents</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">CDIR_NAME</td>
+<td class="r data">0</td>
+<td class="l data">DIAB-COG-pwr-calcs-prj</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">CDIR_PATH</td>
+<td class="r data">0</td>
+<td class="l data">C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">DATA_PROJECTS_PATH</td>
+<td class="r data">0</td>
+<td class="l data">S:\Intmed_Rsrch2\GenMed\Restricted\MASTER DATASETS\Data_Projects</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">HSR_CMPLIB_PATH</td>
+<td class="r data">0</td>
+<td class="l data">S:\Intmed_Rsrch2\GenMed\Restricted\MASTER DATASETS\HSR_ASSETS\MASTER_CMPLIB</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">HSR_CMPLIB_VERSION</td>
+<td class="r data">0</td>
+<td class="l data">2020-05-14_Messineo</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">HSR_MASTER_DATASETS_PATH</td>
+<td class="r data">0</td>
+<td class="l data">S:\Intmed_Rsrch2\GenMed\Restricted\MASTER DATASETS</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">ORIGINAL_DATA_PATH</td>
+<td class="r data">0</td>
+<td class="l data">S:\Intmed_Rsrch2\GenMed\Restricted\MASTER DATASETS\Data</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">12</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">PROJECT_NAME</td>
+<td class="r data">0</td>
+<td class="l data">DIAB-COG-pwr-calcs-prj</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">13</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">PROJECT_PATH</td>
+<td class="r data">0</td>
+<td class="l data">C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">14</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">SAS_BATCHMODE</td>
+<td class="r data">0</td>
+<td class="l data">Y</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">15</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">SAS_FULLNAME</td>
+<td class="r data">0</td>
+<td class="l data">C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj\01show_prj_assets.sas</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">16</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">SAS_PROGNAME</td>
+<td class="r data">0</td>
+<td class="l data">01show_prj_assets</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">17</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">TODAY_YYMMDD10</td>
+<td class="r data">0</td>
+<td class="l data">2021-11-10</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">18</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">_GLBTMP_</td>
+<td class="r data">0</td>
+<td class="l data">C:\Users\agalecki\Documents</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">19</th>
+<td class="l data">GLOBAL</td>
+<td class="l data">_SETUP2_INFO_PATH</td>
+<td class="r data">0</td>
+<td class="l data">S:\Intmed_Rsrch2\GenMed\Restricted\MASTER DATASETS\HSR_assets\HSR_setup2_info</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX6"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="l systemtitle">SAS catalogs (subset of `_vcatalg` dataset)</td>
+</tr>
+</table><br>
+<div>
+<div align="left">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Print: Data Set WORK._VCATALG">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r header" scope="col">Obs</th>
+<th class="l header" scope="col">libname</th>
+<th class="l header" scope="col">memname</th>
+<th class="l header" scope="col">objname</th>
+<th class="l header" scope="col">objdesc</th>
+<th class="r header" scope="col">created</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">FMT_UTILS1</td>
+<td class="l data">PCTX</td>
+<td class="l data">&nbsp;</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">FMT_UTILS1</td>
+<td class="l data">PCTXX</td>
+<td class="l data">&nbsp;</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">SASMACR</td>
+<td class="l data">SASCATALOG_CONTENTS</td>
+<td class="l data">UTILS:</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">SASMACR</td>
+<td class="l data">_DEBUG_MACRO_NOTE</td>
+<td class="l data">Messineo:</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">SASMACR</td>
+<td class="l data">_DELETE_TABLES</td>
+<td class="l data">Messineo:</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">SASMACR</td>
+<td class="l data">_GET_ENGINE</td>
+<td class="l data">Messineo:</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">SASMACR</td>
+<td class="l data">_GET_KEEPLIST</td>
+<td class="l data">Messineo:</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">SASMACR</td>
+<td class="l data">_GET_NUM_RECORDS</td>
+<td class="l data">Messineo:</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">SASMACR</td>
+<td class="l data">_MAKE_ATTRIBS</td>
+<td class="l data">Messineo:</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">SASMACR</td>
+<td class="l data">_MAKE_DIRECTORY</td>
+<td class="l data">Messineo:</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">SASMACR</td>
+<td class="l data">_MAKE_FORMAT</td>
+<td class="l data">Messineo:</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">12</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">SASMACR</td>
+<td class="l data">_READ_SYSPARM</td>
+<td class="l data">Messineo:</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">13</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">SASMACR</td>
+<td class="l data">_REFRESH_MACROS</td>
+<td class="l data">Messineo:</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">14</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">SASMACR</td>
+<td class="l data">_RESET_LOG_OPTIONS</td>
+<td class="l data">Messineo:</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">15</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">SASMACR</td>
+<td class="l data">_TURN_LOG_OPTIONS_OFF</td>
+<td class="l data">Messineo:</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">16</th>
+<td class="l data">CMPLIB</td>
+<td class="l data">SASMACR</td>
+<td class="l data">_TURN_LOG_OPTIONS_ON</td>
+<td class="l data">Messineo:</td>
+<td class="r data">05JUL20:09:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">17</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">CDIR_NAMES_UP</td>
+<td class="l data">INC\general:</td>
+<td class="r data">10NOV21:12:26:12</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">18</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">CDIR_PATHS_UP</td>
+<td class="l data">INC:</td>
+<td class="r data">10NOV21:12:26:12</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">19</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">CHECKDUPKEY</td>
+<td class="l data">M1: Check data for dupkeys</td>
+<td class="r data">10NOV21:12:26:12</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">20</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">COMPUTER_NAME</td>
+<td class="l data">UTILS: Assigns value to `computer_name` global macro variable</td>
+<td class="r data">10NOV21:12:26:13</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">21</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">CREATE_OUR_VDATA</td>
+<td class="l data">&nbsp;</td>
+<td class="r data">10NOV21:12:26:16</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">22</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">DRIVER</td>
+<td class="l data">M1: Driver macro</td>
+<td class="r data">10NOV21:12:26:13</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">23</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">HSR_FOLDERS_MAP</td>
+<td class="l data">&nbsp;</td>
+<td class="r data">10NOV21:12:26:13</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">24</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">LAST_WORDX</td>
+<td class="l data">Extracts last word from a string</td>
+<td class="r data">10NOV21:12:26:14</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">25</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">OUR_SAS_PROGNAME</td>
+<td class="l data">Assigns selected global macro variables</td>
+<td class="r data">10NOV21:12:26:14</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">26</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">OUR_SESSION_BASIC</td>
+<td class="l data">Basic info about our SAS session</td>
+<td class="r data">10NOV21:12:26:16</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">27</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">OUR_SESSION_CMPLIB</td>
+<td class="l data">&nbsp;</td>
+<td class="r data">10NOV21:12:26:16</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">28</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">OUR_SESSION_FOLDER_MAP</td>
+<td class="l data">&nbsp;</td>
+<td class="r data">10NOV21:12:26:16</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">29</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">OUR_VCATALG</td>
+<td class="l data">&nbsp;</td>
+<td class="r data">10NOV21:12:26:16</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">30</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">OUR_VCOLUMN</td>
+<td class="l data">Variable names stored in `_vcolumn` dataset</td>
+<td class="r data">10NOV21:12:26:16</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">31</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">OUR_VEXTFL</td>
+<td class="l data">SAS filerefs stored in `_vextfl` dataset</td>
+<td class="r data">10NOV21:12:26:16</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">32</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">OUR_VLIBNAM</td>
+<td class="l data">SAS libraries stored in `_vlibnam` dataset</td>
+<td class="r data">10NOV21:12:26:16</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">33</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">OUR_VMACRO</td>
+<td class="l data">Macro variables and their values</td>
+<td class="r data">10NOV21:12:26:16</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">34</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">OUR_VTABLE</td>
+<td class="l data">SAS datasets stored in `_vtable` dataset</td>
+<td class="r data">10NOV21:12:26:16</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">35</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">PATH_2ONELEVEL_UP</td>
+<td class="l data">Returns path to a folder one level up and stores it in `_glbtmp_` macro varaible</td>
+<td class="r data">10NOV21:12:26:14</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">36</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">RDB_INFO</td>
+<td class="l data">INC/Gen: Creates Relational Database Map</td>
+<td class="r data">10NOV21:12:26:15</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">37</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">SAS_WORK_DIRECTORY</td>
+<td class="l data">UTILS: Returns path to SAS work directory</td>
+<td class="r data">10NOV21:12:26:11</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">38</th>
+<td class="l data">WORK</td>
+<td class="l data">SASMACR</td>
+<td class="l data">SYSPARM_HSRSETUP_UPDATE</td>
+<td class="l data">&nbsp;</td>
+<td class="r data">10NOV21:12:26:15</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<a name="IDX7"></a>
+<div>
+<div class="l paragraph">&nbsp;</div>
+<div class="l paragraph" style=" color: #FF0000; font-size: 15pt;">  HSR cmplib info (Version = 2020-05-14_Messineo)</div>
+<div class="l paragraph">  HSR_cmplib_path: S:\Intmed_Rsrch2\GenMed\Restricted\MASTER DATASETS\HSR_ASSETS\MASTER_CMPLIB</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX8"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="l systemtitle">List of catalogs/data in `cmplib` library(cmplib_version := 2020-05-14_Messineo) </td>
+</tr>
+</table><br>
+<div>
+<div align="left">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Datasets: Directory Information">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Libref</th>
+<td class="l data">CMPLIB</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Engine</th>
+<td class="l data">V9</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Physical Name</th>
+<td class="l data">S:\Intmed_Rsrch2\GenMed\Restricted\MASTER DATASETS\HSR_ASSETS\MASTER_CMPLIB\cmplib\2020-05-14_Messineo</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Filename</th>
+<td class="l data">S:\Intmed_Rsrch2\GenMed\Restricted\MASTER DATASETS\HSR_ASSETS\MASTER_CMPLIB\cmplib\2020-05-14_Messineo</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Owner Name</th>
+<td class="l data">UMHS\whitnera</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">File Size</th>
+<td class="l data">0KB</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">File Size (bytes)</th>
+<td class="l data">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX9"></a>
+<div>
+<div align="left">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Datasets: Library Members">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r b header" scope="col">#</th>
+<th class="l b header" scope="col">Name</th>
+<th class="l b header" scope="col">Member Type</th>
+<th class="r b header" scope="col">File Size</th>
+<th class="l b header" scope="col">Last Modified</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="l data">FCMP_FUNCTIONS</td>
+<td class="l data">DATA</td>
+<td class="r data">256KB</td>
+<td class="l data">07/05/2020 08:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">&nbsp;</th>
+<td class="l data">FCMP_FUNCTIONS</td>
+<td class="l data">INDEX</td>
+<td class="r data">9KB</td>
+<td class="l data">07/05/2020 08:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="l data">FMT_UTILS1</td>
+<td class="l data">CATALOG</td>
+<td class="r data">17KB</td>
+<td class="l data">07/05/2020 08:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="l data">FMT_UTILS1_CNTLOUT</td>
+<td class="l data">DATA</td>
+<td class="r data">128KB</td>
+<td class="l data">07/05/2020 08:43:39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="l data">SASMACR</td>
+<td class="l data">CATALOG</td>
+<td class="r data">157KB</td>
+<td class="l data">07/05/2020 08:43:40</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+</div>
+</body>
+</html>

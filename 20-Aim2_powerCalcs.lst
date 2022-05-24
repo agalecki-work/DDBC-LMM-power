@@ -1,0 +1,56 @@
+The SAS System                                               13:17 Wednesday, November 10, 2021   1
+
+20-Aim2_powerCalcs.sas executed
+
+
+
+Executed on: 10NOV21
+
+
+
+--- SAS session
+
+Userid:                 agalecki
+
+SAS Version:            9.04.01M4P11092016
+
+OS:                     X64_10PRO
+
+
+
+--- Current directory ----------------
+
+cdir_name:             DIAB-COG-pwr-calcs-prj
+
+project_name:          DIAB-COG-pwr-calcs-prj
+
+cdir_path:             C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj
+
+Outcome gcp_m1 with effect of -0.05 on the interaction between race and time                      2
+                                                                 13:17 Wednesday, November 10, 2021
+
+               Num                                                                dendf
+Obs  Effect     DF  DenDF   FValue   ProbF  alpha    n   ni   p  dendf0     qf      A     power
+
+ 1   blkyrsb     1  27503     1.28  0.2575   0.05  8588   3  13   17176  3.84200  25751  0.20491
+Outcome gcp_m2 with effect of -0.1 on the interaction between race and time                       3
+                                                                 13:17 Wednesday, November 10, 2021
+
+               Num                                                                dendf
+Obs  Effect     DF  DenDF   FValue   ProbF  alpha    n   ni   p  dendf0     qf      A     power
+
+ 1   blkyrsb     1  27503     5.13  0.0235   0.05  8588   3  13   17176  3.84200  25751  0.61966
+Outcome gcp_m3 with effect of -0.15 on the interaction between race and time                      4
+                                                                 13:17 Wednesday, November 10, 2021
+
+               Num                                                                dendf
+Obs  Effect     DF  DenDF   FValue   ProbF  alpha    n   ni   p  dendf0     qf      A     power
+
+ 1   blkyrsb     1  27503    11.54  0.0007   0.05  8588   3  13   17176  3.84200  25751  0.92462
+Outcome gcp_m4 with effect of -0.20 on the interaction between race and time                      5
+                                                                 13:17 Wednesday, November 10, 2021
+
+               Num                                                                dendf
+Obs  Effect     DF  DenDF   FValue   ProbF  alpha    n   ni   p  dendf0     qf      A     power
+
+ 1   blkyrsb     1  27503    20.51  <.0001   0.05  8588   3  13   17176  3.84200  25751  0.99490

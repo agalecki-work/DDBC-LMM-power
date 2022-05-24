@@ -1,0 +1,282 @@
+1                                         The SAS System         12:26 Wednesday, November 10, 2021
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M4) 
+      Licensed to UNIVERSITY OF MICHIGAN - T&R - SFA, Site 70082420.
+NOTE: This session is executing on the X64_10PRO  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.2
+      SAS/ETS 14.2
+      SAS/OR 14.2
+      SAS/IML 14.2
+      SAS/QC 14.2
+
+NOTE: Additional host information:
+
+ X64_10PRO WIN 10.0.18362  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.25 seconds
+      cpu time            0.31 seconds
+      
+1          
+2          
+3          /***************************************************************************************
+3        ! ****************
+4          * STEP 1: Power calculations for Aim1 DIAB-Cog grant.
+5          *
+6          * We use raw data to fit the linear mixed effects model. Estimates and predicted values
+6        ! from this model
+7          * fit will be used to calcualate power in Step 2 (see `12-Aim1_powerCalcs.sas`)
+8          *
+9          *---------------------------------------------------------------------------------------
+9        ! ---------------*
+10         * PI: Deb Levine
+11         * Programer: Mohammed Kabeto
+12         * Date:	9/29/2021
+13         ****************************************************************************************
+13       ! ****************
+14         */
+15         
+16         %put # ====  SETUP SCRIPTS executed;
+# ====  SETUP SCRIPTS executed
+17         
+18         /*  NOTE: Typically no changes needed in this section */
+19         
+20         %put ## 1. SETUP `C:\Users\Public\HSR_setup.sas`;
+## 1. SETUP `C:\Users\Public\HSR_setup.sas`
+21         %put  *  `hsr_master_datasets_path` and _current_ project work  directory
+21       ! (`project_path`)  created;
+*  `hsr_master_datasets_path` and _current_ project work  directory (`project_path`)  created
+22         
+2                                         The SAS System         12:26 Wednesday, November 10, 2021
+
+23         /* ---- Note the location of the file --- */
+24         filename hrsetup1  "C:\Users\Public\HSR_setup.sas";
+25         %include hrsetup1;
+70         %put;
+ 
+71         
+72         %put  ## 2. SETUP `hsr_setup2.inc`;
+## 2. SETUP `hsr_setup2.inc`
+73         filename hrsetup2 "&hsr_master_datasets_path\hsr_setup2.inc";
+74         %include hrsetup2;
+# `hsr_setup2.inc` included
+## Auxiliary macros loaded
+===> _include-macros.inc assets STARTS ----
+... - in folder S:\Intmed_Rsrch2\GenMed\Restricted\MASTER 
+DATASETS\HSR_assets\HSR_setup2_info\inc\general
+... .\cdir_names_up.sas
+... .\cdir_paths_up.sas
+... .\checkdupkey.sas
+... .\computer_name.sas
+... .\driver.sas
+... .\HSR_folders_map.sas
+===> _include-macros.inc STARTS ----
+... - in folder S:\Intmed_Rsrch2\GenMed\Restricted\MASTER 
+DATASETS\HSR_assets\HSR_setup2_info\inc\session
+... .\our_session_cmplib.sas
+... .\our_session_folder_map.sas
+... .\session_info.sas
+## Global macro variables created
+sas_progname2 := 10-Aim1_Create_predm.sas
+len := 24
+ext := .sas
+==== Macro our_sas_progname executed ======
+sas_batchmode           := Y
+sas_fullname            := 
+C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj\10-Aim1_Create_predm.sas
+sas_progname            := 10-Aim1_Create_predm
+==== Macro our_sas_progname ended ======
+* ... Global macro vars: `cdir1up_path`, `cdir2up_path` created
+
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+* cdir_path     := C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj
+* cdir1up_path1 := C:\Users\agalecki\Documents\GitHub
+3                                         The SAS System         12:26 Wednesday, November 10, 2021
+
+* cdir2up_path2 := C:\Users\agalecki\Documents
+
+* ... Global macro vars: `cdir_name`, `cdir1up_name`, `cdir2up_name` created
+
+##----  Auxiliary macro variables
+* cdir_name       := DIAB-COG-pwr-calcs-prj
+* cdir1up_name    := GitHub
+* cdir2up_name    := Documents
+
+## Dataset `work.HSR_folders_map` created
+
+NOTE: The data set WORK.HSR_FOLDERS_MAP has 7 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+NOTE: There were 7 observations read from the data set WORK.HSR_FOLDERS_MAP.
+
+NOTE: CALL EXECUTE generated line.
+1         + ;
+2         + ;
+3         + ;
+4         + ;
+## ==== `hsr_setup2.inc` executed ====
+## Selected auxiliary macros variables displayed
+... _Setup2_info_path := S:\Intmed_Rsrch2\GenMed\Restricted\MASTER 
+DATASETS\HSR_assets\HSR_setup2_info
+... HSR_CMPLIB_PATH   := S:\Intmed_Rsrch2\GenMed\Restricted\MASTER 
+DATASETS\HSR_ASSETS\MASTER_CMPLIB
+... sas_progname      := 10-Aim1_Create_predm
+... cdir_path         := C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj
+... cdir1up_path      := C:\Users\agalecki\Documents\GitHub
+... cdir2up_path      := C:\Users\agalecki\Documents
+... cdir_name         := DIAB-COG-pwr-calcs-prj
+... cdir1up_name      := GitHub
+... cdir2up_name      := Documents
+==== `hsr_setup2.inc` execution ended ====
+... `hsr_setup2.inc` ENDED
+ 
+733        %put;
+ 
+734        
+735        %put  ## 3. SETUP _cdir_setup_info.inc;
+## 3. SETUP _cdir_setup_info.inc
+736        filename hrsetup3 "&cdir_path\_cdir_setup_info.inc";
+737        %include hrsetup3;   /* Created objects, e.g. macro variables can be reviewed in
+737      ! `sashtml.htm` file */
+4                                         The SAS System         12:26 Wednesday, November 10, 2021
+
+project_path :=C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj
+project_name :=DIAB-COG-pwr-calcs-prj
+Today is 2021-11-10
+754        %put;
+ 
+755        
+756        /*--- Program setup ENDS here ===*/
+757        
+758        /* ============== Our program starts here ==========*/
+759        
+760        options mprint nocenter;
+761        libname datain  "&cdir_path\datain";
+NOTE: Libref DATAIN was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj\datain
+762        libname dataout "&cdir_path\dataout";
+NOTE: Libref DATAOUT was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj\dataout
+763        
+764        /*--- Create auxiliary variables */
+765        data work.Aim1data;
+766          set datain.aim1data;
+767          blkyrsb  = black*cogtime_y2;
+768          blkglual = black*mean_glu_all;
+769          gluayrsb = mean_glu_all*cogtime_y2;
+770        run;
+
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      165 at 768:19   165 at 769:26   
+NOTE: There were 107716 observations read from the data set DATAIN.AIM1DATA.
+NOTE: The data set WORK.AIM1DATA has 107716 observations and 26 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+771        
+772        /*--- HTML report created */
+773        ods html file = "&sas_progname..html" (title ="&sas_progname")
+774                 path = "&cdir_path\reports";
+NOTE: Writing HTML Body file: 10-Aim1_Create_predm.html
+775        %our_session_basic;
+MPRINT(OUR_SESSION_BASIC):   proc odstext;
+MPRINT(OUR_SESSION_BASIC):   p "10-Aim1_Create_predm.sas executed" / style=[color=red 
+fontsize=15pt];
+MPRINT(OUR_SESSION_BASIC):   p "";
+MPRINT(OUR_SESSION_BASIC):   p "Executed on: 10NOV21";
+MPRINT(OUR_SESSION_BASIC):   p '';
+MPRINT(OUR_SESSION_BASIC):   p "--- SAS session";
+MPRINT(OUR_SESSION_BASIC):   p "Userid:                 agalecki";
+MPRINT(OUR_SESSION_BASIC):   p "SAS Version:            9.04.01M4P11092016";
+5 The SAS System                                                 12:26 Wednesday, November 10, 2021
+
+MPRINT(OUR_SESSION_BASIC):   p "OS:                     X64_10PRO";
+MPRINT(OUR_SESSION_BASIC):   p '';
+MPRINT(OUR_SESSION_BASIC):   p "--- Current directory ---------------- ";
+MPRINT(OUR_SESSION_BASIC):   p "cdir_name:             DIAB-COG-pwr-calcs-prj";
+MPRINT(OUR_SESSION_BASIC):   p "project_name:          DIAB-COG-pwr-calcs-prj";
+MPRINT(OUR_SESSION_BASIC):   p "cdir_path:             
+C:\Users\agalecki\Documents\GitHub\DIAB-COG-pwr-calcs-prj";
+NOTE: PROCEDURE ODSTEXT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+NOTE: The PROCEDURE ODSTEXT printed page 1.
+
+MPRINT(OUR_SESSION_BASIC):   run;
+MPRINT(OUR_SESSION_BASIC):   quit;
+776        
+777        Title "PROC CONTENTS for `work.Aim1data`";
+778        proc contents data=work.Aim1data;
+779        run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+NOTE: The PROCEDURE CONTENTS printed pages 2-3.
+
+780        
+781        Title "Model fit. Predicted values saved in `dataout.aim1predv` dataset";
+782        proc hpmixed data=work.Aim1data noclprint;
+783          class newid cohortd bmicat;
+784          model gcp = cogtime_y2 black mean_glu_all blkyrsb blkglual gluayrsb cohortd female0
+784      ! educ1 educ2 educ3 educ4
+785                       bmicat smoke physact hxafib htntx / solution ;
+786          random intercept cogtime_y2 /subject=newid type=un;
+787          output out=dataout.aim1predv pred(NOBLUP)=pred_v;
+788        run;
+
+NOTE: 165 observations are excluded because of: missing fixed effects (n=165), missing subject 
+      effects (n=21).
+NOTE: Convergence criterion (GCONV=1E-8) satisfied.
+NOTE: Variable pred_v already exists on file DATAOUT.AIM1PREDV, using pred_v2 instead.
+NOTE: The data set DATAOUT.AIM1PREDV has 107716 observations and 27 variables.
+NOTE: The PROCEDURE HPMIXED printed pages 4-5.
+NOTE: PROCEDURE HPMIXED used (Total process time):
+      real time           38:02.02
+      cpu time            37:50.48
+      
+
+789        ods html close;
+790        
+791        
+792        
+
+6 The SAS System                                                 12:26 Wednesday, November 10, 2021
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           38:08.62
+      cpu time            37:51.37
+      
