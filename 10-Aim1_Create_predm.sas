@@ -13,29 +13,6 @@
 ********************************************************************************************************
 */
 
-%put # ====  SETUP SCRIPTS executed;
-
-/*  NOTE: Typically no changes needed in this section */
-
-%put ## 1. SETUP `C:\Users\Public\HSR_setup.sas`;
-%put  *  `hsr_master_datasets_path` and _current_ project work  directory (`project_path`)  created;
-
-/* ---- Note the location of the file --- */
-filename hrsetup1  "C:\Users\Public\HSR_setup.sas";
-%include hrsetup1;
-%put;
-
-%put  ## 2. SETUP `hsr_setup2.inc`;
-filename hrsetup2 "&hsr_master_datasets_path\hsr_setup2.inc";
-%include hrsetup2;   
-%put;
-
-%put  ## 3. SETUP _cdir_setup_info.inc;
-filename hrsetup3 "&cdir_path\_cdir_setup_info.inc";
-%include hrsetup3;   /* Created objects, e.g. macro variables can be reviewed in `sashtml.htm` file */ 
-%put;
-
-/*--- Program setup ENDS here ===*/
 
 /* ============== Our program starts here ==========*/
 
